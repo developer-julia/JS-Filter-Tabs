@@ -1,0 +1,25 @@
+.films-tabs
+    &__list
+        margin: 0 auto
+        max-width: 60%
+        display: grid
+        grid-template-columns: repeat(5, auto)
+        grid-template-rows: auto
+        margin-bottom: 40px
+    &__link
+        padding: 10px 25px
+        cursor: pointer
+        color: #FFFFFF
+        background-color: #202123
+        border: 1px solid #2B2B2B
+        border-radius: 93px
+        transition: all .3s
+        &:hover, &:focus
+            outline: none
+            background-color: #27282a
+    &__link_active
+        background-color: #80BECB
+        border: 1px solid #80BECB
+        &:hover, &:focus
+            background-color: #80BECB
+            border: 1px solid #80BECB

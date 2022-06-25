@@ -1,0 +1,29 @@
+.article
+    display: grid
+    grid-template-columns: repeat(5, 18%)
+    grid-template-rows: repeat(2, auto)
+    grid-auto-rows: auto
+    gap: 30px
+    &-item__img
+        border-radius: 5px
+        max-width: 245px
+        height: 381px
+        object-fit: cover
+        margin-bottom: 20px
+    &-item__title
+        font-size: 22px
+        line-height: 26px
+        margin-bottom: 10px
+    &-item__info
+    &-item__year, &-item__category, &-item__country
+        font-size: 20px
+        line-height: 23px
+    &-item
+        z-index: 5
+        transition: all .3s
+        &:hover, &:focus
+            outline: none
+            .article-item__img
+                filter: brightness(80%)
+            .article-item__title
+                color: #80BECB

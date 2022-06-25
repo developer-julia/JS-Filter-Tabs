@@ -1,0 +1,22 @@
+//- ================ Шаблон блока с фильмом
+mixin articleLink(articleLinkPage, articleTitle, articleImg, articleYear, articleCategory, articleCountry)
+    //- Ссылка блока на сооответствующую страницу фильма
+    a.article-item(class!=attributes.class href=articleLinkPage)
+        //- Ссылка на изображение
+        img.article-item__img(class!=attributes.class src=articleImg, alt="film poster")
+        //- Заголовок фильма
+        h4.article-item__title=articleTitle
+        //- Описание фильма
+        .article-item__info
+            //- Год фильма
+            span.article-item__year=articleYear
+            //- Категория фильма
+            span.article-item__category=articleCategory
+            //- Страна фильма
+            span.article-item__country=articleCountry
+
+//- Цикл наименования табов
+- var categoryFilms = [Все, Ужасы, Фантастика, Комедия, Детектив];
+
+//- mixin articleLink(href, name)
+            a(class!=attributes.class href=href)= name

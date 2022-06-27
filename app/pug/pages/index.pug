@@ -7,7 +7,7 @@ html(lang="ru")
   body
     //- Подключение шапки сайта
     include mixin
-    main
+    main.main
       section.films
       .page
         h1.films__title Лучшие фильмы за все время по категориям
@@ -19,7 +19,7 @@ html(lang="ru")
         .films__inner
           ul.article
               li.article-item.article-item_comedy
-                  +articleLink('#', 'Безумный девичник', './images/best_films/category/comedy/01.jpg', '2021, ', 'Комедия, ', 'Италия')
+                  +articleLink('#', 'Безумный девичник', './images/best_films/category/comedy/09.jpg', '2021, ', 'Комедия, ', 'Италия')
               li.article-item.article-item_detective
                   +articleLink('#', 'Голем', './images/best_films/category/detective/02.jpg', '2021, ', 'Детектив, ', 'Великобритания')
               li.article-item.article-item_fantastic

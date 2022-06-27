@@ -3,6 +3,7 @@
     grid-template-columns: repeat(5, 18%)
     grid-template-rows: repeat(2, auto)
     grid-auto-rows: auto
+    justify-content: center
     gap: 30px
     &-item__img
         border-radius: 5px
@@ -19,6 +20,7 @@
         font-size: 20px
         line-height: 23px
     &-item
+        max-width: 245px
         z-index: 5
         transition: all .3s
         &:hover, &:focus
@@ -27,3 +29,20 @@
                 filter: brightness(80%)
             .article-item__title
                 color: #80BECB
+@media screen and (max-width: 1440px)
+    .article
+        display: grid
+        grid-template-columns: repeat(4, 23%)
+        grid-template-rows: repeat(2, auto)
+        grid-auto-rows: auto
+        justify-content: center
+        gap: 20px
+        &-item
+            max-width: 290px
+            z-index: 5
+        &-item__img
+            border-radius: 5px
+            max-width: 290px
+            height: auto
+            object-fit: cover
+            margin-bottom: 20px

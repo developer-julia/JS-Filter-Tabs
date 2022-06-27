@@ -5,60 +5,60 @@ html(lang="ru")
     title Pug. Начало работы
     link(rel="stylesheet", href="css/style.min.css")
   body
-    //- Подключение шапки сайта
+    //- Подключение миксинов
     include mixin
     main.main
       section.films
-      .page
-        h1.films__title Лучшие фильмы за все время по категориям
-        .films-tabs
-          ul.films-tabs__list
-            each categoryFilm in ['Все', 'Ужасы', 'Фанастика', 'Комедия', 'Детектив']
-                li.films-tabs__item
-                    button.films-tabs__link= categoryFilm
-        .films__inner
-          ul.article
-              li.article-item.article-item_comedy
-                  +articleLink('#', 'Безумный девичник', './images/best_films/category/comedy/09.jpg', '2021, ', 'Комедия, ', 'Италия')
-              li.article-item.article-item_detective
-                  +articleLink('#', 'Голем', './images/best_films/category/detective/02.jpg', '2021, ', 'Детектив, ', 'Великобритания')
-              li.article-item.article-item_fantastic
-                  +articleLink('#', 'Интерстеллар', './images/best_films/category/fantastic/03.jpg', '2014, ', 'Фантастика, ', 'США, Великобритания, Канада')
-              li.article-item.article-item_horror
-                  +articleLink('#', 'Звонки', './images/best_films/category/horror/04.jpg', '2017, ', 'Ужасы, ', 'США')
+        .page
+            h1.films__title Лучшие фильмы за все время по категориям
+            .films-tabs
+            ul.films-tabs__list
+                each categoryFilm in ['Все', 'Ужасы', 'Фанастика', 'Комедия', 'Детектив']
+                    li.films-tabs__item
+                        button.films-tabs__link= categoryFilm
+            .films__inner
+            ul.article
+                li.article-item.article-item_comedy
+                    +articleLink('#', 'Безумный девичник', './images/best_films/category/comedy/09.jpg', '2021, ', 'Комедия, ', 'Италия')
+                li.article-item.article-item_detective
+                    +articleLink('#', 'Голем', './images/best_films/category/detective/02.jpg', '2021, ', 'Детектив, ', 'Великобритания')
+                li.article-item.article-item_fantastic
+                    +articleLink('#', 'Интерстеллар', './images/best_films/category/fantastic/03.jpg', '2014, ', 'Фантастика, ', 'США, Великобритания, Канада')
+                li.article-item.article-item_horror
+                    +articleLink('#', 'Звонки', './images/best_films/category/horror/04.jpg', '2017, ', 'Ужасы, ', 'США')
 
-              li.article-item.article-item_comedy
-                  +articleLink('#', 'Пара на праздники', './images/best_films/category/comedy/02.jpg', '2020, ', 'Комедия, ', 'США')
-              li.article-item.article-item_fantastic
-                  +articleLink('#', 'Матрица', './images/best_films/category/fantastic/01.jpg', '1999, ', 'Фантастика, ', 'Австралия, США')
-              li.article-item.article-item_horror
-                  +articleLink('#', 'Яга. Кошмар тёмного леса', './images/best_films/category/horror/02.jpg', '2020, ', 'Ужасы, ', 'Россия')
-              li.article-item.article-item_detective
-                  +articleLink('#', 'Убийства по открыткам', './images/best_films/category/detective/01.jpg', '2020, ', 'Детектив, ', 'Великобритания, США')
-              
-              li.article-item.article-item_fantastic
-                  +articleLink('#', 'Властелин колец: Возвращение Короля', './images/best_films/category/fantastic/04.jpg', '2003, ', 'Фантастика, ', 'Новая Зеландия, США')
-              li.article-item.article-item_horror
-                  +articleLink('#', 'Пила: Спираль', './images/best_films/category/horror/03.jpg', '2021, ', 'Ужасы, ', 'США, Канада')
-              li.article-item.article-item_comedy
-                  +articleLink('#', 'Если свекровь – монстр…', './images/best_films/category/comedy/03.jpg', '2005, ', 'Комедия, ', 'США, Германия')
-              li.article-item.article-item_detective
-                  +articleLink('#', 'Дело Коллини', './images/best_films/category/detective/03.jpg', '2019, ', 'Детектив, ', 'Германия')
-              
-              li.article-item.article-item_detective
-                  +articleLink('#', 'Где-то во времени', './images/best_films/category/detective/04.jpg', '2018, ', 'Детектив, ', 'США')
-              li.article-item.article-item_fantastic
-                  +articleLink('#', 'Тёмный рыцарь', './images/best_films/category/fantastic/02.jpg', '2008, ', 'Фантастика, ', 'США, Великобритания')
-              li.article-item.article-item_horror
-                  +articleLink('#', 'Астрал', './images/best_films/category/horror/01.jpg', '2010, ', 'Ужасы, ', 'США')
-              li.article-item.article-item_comedy
-                  +articleLink('#', '7 часов на соблазнение', './images/best_films/category/comedy/04.jpg', '2005, ', 'Комедия, ', 'США, Германия')
-              
-              li.article-item.article-item_horror
-                  +articleLink('#', 'Пункт назначения 5', './images/best_films/category/horror/05.jpg', '2021, ', 'Ужасы, ', 'Канада')
-              li.article-item.article-item_detective
-                  +articleLink('#', 'Не оставляющий следа', './images/best_films/category/detective/05.jpg', '2008, ', 'Детектив, ', 'США')
-              li.article-item.article-item_comedy
-                  +articleLink('#', 'Гуляй, Вася! Свидание на Бали', './images/best_films/category/comedy/05.jpg', '2020, ', 'Комедия, ', 'Россия')
-              li.article-item.article-item_fantastic
-                  +articleLink('#', 'Властелин колец: Братство кольца', './images/best_films/category/fantastic/05.jpg', '2001, ', 'Фантастика, ', 'Новая Зеландия, США')
+                li.article-item.article-item_comedy
+                    +articleLink('#', 'Пара на праздники', './images/best_films/category/comedy/02.jpg', '2020, ', 'Комедия, ', 'США')
+                li.article-item.article-item_fantastic
+                    +articleLink('#', 'Матрица', './images/best_films/category/fantastic/01.jpg', '1999, ', 'Фантастика, ', 'Австралия, США')
+                li.article-item.article-item_horror
+                    +articleLink('#', 'Яга. Кошмар тёмного леса', './images/best_films/category/horror/02.jpg', '2020, ', 'Ужасы, ', 'Россия')
+                li.article-item.article-item_detective
+                    +articleLink('#', 'Убийства по открыткам', './images/best_films/category/detective/01.jpg', '2020, ', 'Детектив, ', 'Великобритания, США')
+                
+                li.article-item.article-item_fantastic
+                    +articleLink('#', 'Властелин колец: Возвращение Короля', './images/best_films/category/fantastic/04.jpg', '2003, ', 'Фантастика, ', 'Новая Зеландия, США')
+                li.article-item.article-item_horror
+                    +articleLink('#', 'Пила: Спираль', './images/best_films/category/horror/03.jpg', '2021, ', 'Ужасы, ', 'США, Канада')
+                li.article-item.article-item_comedy
+                    +articleLink('#', 'Если свекровь – монстр…', './images/best_films/category/comedy/03.jpg', '2005, ', 'Комедия, ', 'США, Германия')
+                li.article-item.article-item_detective
+                    +articleLink('#', 'Дело Коллини', './images/best_films/category/detective/03.jpg', '2019, ', 'Детектив, ', 'Германия')
+                
+                li.article-item.article-item_detective
+                    +articleLink('#', 'Где-то во времени', './images/best_films/category/detective/04.jpg', '2018, ', 'Детектив, ', 'США')
+                li.article-item.article-item_fantastic
+                    +articleLink('#', 'Тёмный рыцарь', './images/best_films/category/fantastic/02.jpg', '2008, ', 'Фантастика, ', 'США, Великобритания')
+                li.article-item.article-item_horror
+                    +articleLink('#', 'Астрал', './images/best_films/category/horror/01.jpg', '2010, ', 'Ужасы, ', 'США')
+                li.article-item.article-item_comedy
+                    +articleLink('#', '7 часов на соблазнение', './images/best_films/category/comedy/04.jpg', '2005, ', 'Комедия, ', 'США, Германия')
+                
+                li.article-item.article-item_horror
+                    +articleLink('#', 'Пункт назначения 5', './images/best_films/category/horror/05.jpg', '2021, ', 'Ужасы, ', 'Канада')
+                li.article-item.article-item_detective
+                    +articleLink('#', 'Не оставляющий следа', './images/best_films/category/detective/05.jpg', '2008, ', 'Детектив, ', 'США')
+                li.article-item.article-item_comedy
+                    +articleLink('#', 'Гуляй, Вася! Свидание на Бали', './images/best_films/category/comedy/05.jpg', '2020, ', 'Комедия, ', 'Россия')
+                li.article-item.article-item_fantastic
+                    +articleLink('#', 'Властелин колец: Братство кольца', './images/best_films/category/fantastic/05.jpg', '2001, ', 'Фантастика, ', 'Новая Зеландия, США')

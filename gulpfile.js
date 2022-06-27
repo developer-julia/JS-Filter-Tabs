@@ -12,7 +12,7 @@ const del = require('del');
 function browsersync() {
   browserSync.init({
     server: {
-      baseDir: 'app/'
+      baseDir: 'docs/'
     }
   });
 }
@@ -22,7 +22,7 @@ function cleanDist() {
 }
 
 function images() {
-  return src('app/images/**/*')
+  return src('docs/images/**/*')
     .pipe(imagemin(
       [
         imagemin.gifsicle({ interlaced: true }),
@@ -42,50 +42,50 @@ function images() {
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
-    'app/js/main.js'
+    'docs/js/main.js'
   ])
     .pipe(concat('main.min.js'))
     .pipe(uglify())
-    .pipe(dest('app/js'))
+    .pipe(dest('docs/js'))
     .pipe(browserSync.stream())
 }
 
 function buildPug() {
-  return src('app/pug/pages/*.pug')
+  return src('docs/pug/pages/*.pug')
     .pipe(pug({
       pretty: true
     }))
-    .pipe(dest('app'));
+    .pipe(dest('docs'));
 }
 
 function styles() {
-  return src('app/sass/style.sass')
+  return src('docs/sass/style.sass')
     .pipe(sass({ outputStyle: 'compressed' }))
     .pipe(concat('style.min.css'))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 version'],
       grid: false
     }))
-    .pipe(dest('app/css'))
+    .pipe(dest('docs/css'))
     .pipe(browserSync.stream())
 }
 
 function build() {
   return src([
-    'app/css/style.min.css',
-    'app/fonts/**/*',
-    'app/js/main.min.js',
-    'app/*.pug',
-    'app/*.html'
-  ], { base: 'app' })
+    'docs/css/style.min.css',
+    'docs/fonts/**/*',
+    'docs/js/main.min.js',
+    'docs/*.pug',
+    'docs/*.html'
+  ], { base: 'docs' })
     .pipe(dest('dist'))
 }
 
 function watching() {
-  watch(['app/sass/**/*.sass'], styles);
-  watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
-  watch(['app/pug/pages/**/*.pug'], buildPug);
-  watch(['app/*.html']).on('change', browserSync.reload);
+  watch(['docs/sass/**/*.sass'], styles);
+  watch(['docs/js/**/*.js', '!docs/js/main.min.js'], scripts);
+  watch(['docs/pug/pages/**/*.pug'], buildPug);
+  watch(['docs/*.html']).on('change', browserSync.reload);
 }
 
 exports.styles = styles;

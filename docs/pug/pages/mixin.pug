@@ -14,9 +14,209 @@ mixin articleLink(articleLinkPage, articleTitle, articleImg, articleYear, articl
             span.article-item__category=articleCategory
             //- Страна фильма
             span.article-item__country=articleCountry
-
-//- Цикл наименования табов
-- var categoryFilms = [Все, Ужасы, Фантастика, Комедия, Детектив];
-
-//- mixin articleLink(href, name)
-            a(class!=attributes.class href=href)= name
+-
+    const tabs = [
+        {
+            nameTab: 'Все',
+            dataCategory: 'all',
+        },
+        {
+            nameTab: 'Ужасы',
+            dataCategory: 'horror',
+        },
+        {
+            nameTab: 'Фантастика',
+            dataCategory: 'fantastic',
+        },
+        {
+            nameTab: 'Комедия',
+            dataCategory: 'comedy',
+        },
+        {
+            nameTab: 'Детектив',
+            dataCategory: 'detective',
+        },
+    ]
+-
+    const films = [
+        {
+            dataCategory: 'comedy',
+            linkPageFilm: '#',
+            nameFilm: 'Безумный девичник',
+            linkPosterFilm: './images/best_films/category/comedy/01.jpg',
+            yearFilm: '2021, ',
+            categoryFilm: 'Комедия, ',
+            countryFilm: 'Италия'
+        },
+        {
+            dataCategory: 'detective',
+            linkPageFilm: '#',
+            nameFilm: 'Голем',
+            linkPosterFilm: './images/best_films/category/detective/02.jpg',
+            yearFilm: '2021, ',
+            categoryFilm: 'Детектив, ',
+            countryFilm: 'Великобритания'
+        },
+        {
+            dataCategory: 'fantastic',
+            linkPageFilm: '#',
+            nameFilm: 'Интерстеллар',
+            linkPosterFilm: './images/best_films/category/fantastic/03.jpg',
+            yearFilm: '2014, ',
+            categoryFilm: 'Фантастика, ',
+            countryFilm: 'США, Великобритания, Канада'
+        },
+        {
+            dataCategory: 'horror',
+            linkPageFilm: '#',
+            nameFilm: 'Звонки',
+            linkPosterFilm: './images/best_films/category/horror/04.jpg',
+            yearFilm: '2017, ',
+            categoryFilm: 'Ужасы, ',
+            countryFilm: 'США'
+        },
+        {
+            dataCategory: 'comedy',
+            linkPageFilm: '#',
+            nameFilm: 'Пара на праздники',
+            linkPosterFilm: './images/best_films/category/comedy/02.jpg',
+            yearFilm: '2020, ',
+            categoryFilm: 'Комедия, ',
+            countryFilm: 'США'
+        },
+        {
+            dataCategory: 'fantastic',
+            linkPageFilm: '#',
+            nameFilm: 'Матрица',
+            linkPosterFilm: './images/best_films/category/fantastic/01.jpg',
+            yearFilm: '1999, ',
+            categoryFilm: 'Фантастика, ',
+            countryFilm: 'Австралия, США'
+        },
+        {
+            dataCategory: 'horror',
+            linkPageFilm: '#',
+            nameFilm: 'Яга. Кошмар тёмного леса',
+            linkPosterFilm: './images/best_films/category/horror/02.jpg',
+            yearFilm: '2020, ',
+            categoryFilm: 'Ужасы, ',
+            countryFilm: 'Россия'
+        },
+        {
+            dataCategory: 'detective',
+            linkPageFilm: '#',
+            nameFilm: 'Убийства по открыткам',
+            linkPosterFilm: './images/best_films/category/detective/01.jpg',
+            yearFilm: '2020, ',
+            categoryFilm: 'Детектив, ',
+            countryFilm: 'Великобритания, США'
+        },
+        {
+            dataCategory: 'fantastic',
+            linkPageFilm: '#',
+            nameFilm: 'Властелин колец: Возвращение Короля',
+            linkPosterFilm: './images/best_films/category/fantastic/04.jpg',
+            yearFilm: '2003, ',
+            categoryFilm: 'Фантастика, ',
+            countryFilm: 'Новая Зеландия, США'
+        },
+        {
+            dataCategory: 'horror',
+            linkPageFilm: '#',
+            nameFilm: 'Пила: Спираль',
+            linkPosterFilm: './images/best_films/category/horror/03.jpg',
+            yearFilm: '2021, ',
+            categoryFilm: 'Ужасы, ',
+            countryFilm: 'США, Канада'
+        },
+        {
+            dataCategory: 'comedy',
+            linkPageFilm: '#',
+            nameFilm: 'Если свекровь – монстр…',
+            linkPosterFilm: './images/best_films/category/comedy/03.jpg',
+            yearFilm: '2005, ',
+            categoryFilm: 'Комедия, ',
+            countryFilm: 'США, Германия'
+        },
+        {
+            dataCategory: 'detective',
+            linkPageFilm: '#',
+            nameFilm: 'Дело Коллини',
+            linkPosterFilm: './images/best_films/category/detective/03.jpg',
+            yearFilm: '2019, ',
+            categoryFilm: 'Детектив, ',
+            countryFilm: 'Германия'
+        },
+        {
+            dataCategory: 'detective',
+            linkPageFilm: '#',
+            nameFilm: 'Где-то во времени',
+            linkPosterFilm: './images/best_films/category/detective/04.jpg',
+            yearFilm: '2018, ',
+            categoryFilm: 'Детектив, ',
+            countryFilm: 'США'
+        },
+        {
+            dataCategory: 'fantastic',
+            linkPageFilm: '#',
+            nameFilm: 'Тёмный рыцарь',
+            linkPosterFilm: './images/best_films/category/fantastic/02.jpg',
+            yearFilm: '2008, ',
+            categoryFilm: 'Фантастика, ',
+            countryFilm: 'США, Великобритания'
+        },
+        {
+            dataCategory: 'horror',
+            linkPageFilm: '#',
+            nameFilm: 'Астрал',
+            linkPosterFilm: './images/best_films/category/horror/01.jpg',
+            yearFilm: '2008, ',
+            categoryFilm: 'Ужасы, ',
+            countryFilm: 'США'
+        },
+        {
+            dataCategory: 'comedy',
+            linkPageFilm: '#',
+            nameFilm: '7 часов на соблазнение',
+            linkPosterFilm: './images/best_films/category/comedy/04.jpg',
+            yearFilm: '2005, ',
+            categoryFilm: 'Комедия, ',
+            countryFilm: 'США, Германия'
+        },
+        {
+            dataCategory: 'horror',
+            linkPageFilm: '#',
+            nameFilm: 'Пункт назначения 5',
+            linkPosterFilm: './images/best_films/category/horror/05.jpg',
+            yearFilm: '2021, ',
+            categoryFilm: 'Ужасы, ',
+            countryFilm: 'Канада'
+        },
+        {
+            dataCategory: 'detective',
+            linkPageFilm: '#',
+            nameFilm: 'Не оставляющий следа',
+            linkPosterFilm: './images/best_films/category/detective/05.jpg',
+            yearFilm: '2008, ',
+            categoryFilm: 'Детектив, ',
+            countryFilm: 'США'
+        },
+        {
+            dataCategory: 'comedy',
+            linkPageFilm: '#',
+            nameFilm: 'Гуляй, Вася! Свидание на Бали',
+            linkPosterFilm: './images/best_films/category/comedy/05.jpg',
+            yearFilm: '2020, ',
+            categoryFilm: 'Комедия, ',
+            countryFilm: 'Россия'
+        },
+        {
+            dataCategory: 'fantastic',
+            linkPageFilm: '#',
+            nameFilm: 'Властелин колец: Братство кольца',
+            linkPosterFilm: './images/best_films/category/fantastic/05.jpg',
+            yearFilm: '2001, ',
+            categoryFilm: 'Фантастика, ',
+            countryFilm: 'Новая Зеландия, США'
+        },
+    ];
